@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/cantieri-fibercop/static/css/main.237092d0.css",
-    "main.js": "/cantieri-fibercop/static/js/main.bffac643.js",
+    "main.js": "/cantieri-fibercop/static/js/main.ed402454.js",
     "static/js/453.760afc8b.chunk.js": "/cantieri-fibercop/static/js/453.760afc8b.chunk.js",
     "index.html": "/cantieri-fibercop/index.html",
     "main.237092d0.css.map": "/cantieri-fibercop/static/css/main.237092d0.css.map",
-    "main.bffac643.js.map": "/cantieri-fibercop/static/js/main.bffac643.js.map",
+    "main.ed402454.js.map": "/cantieri-fibercop/static/js/main.ed402454.js.map",
     "453.760afc8b.chunk.js.map": "/cantieri-fibercop/static/js/453.760afc8b.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.237092d0.css",
-    "static/js/main.bffac643.js"
+    "static/js/main.ed402454.js"
   ]
 }
