@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/cantieri-fibercop/static/css/main.bb4ed5df.css",
+    "main.js": "/cantieri-fibercop/static/js/main.b197b23d.js",
+    "static/js/453.760afc8b.chunk.js": "/cantieri-fibercop/static/js/453.760afc8b.chunk.js",
+    "index.html": "/cantieri-fibercop/index.html",
+    "main.bb4ed5df.css.map": "/cantieri-fibercop/static/css/main.bb4ed5df.css.map",
+    "main.b197b23d.js.map": "/cantieri-fibercop/static/js/main.b197b23d.js.map",
+    "453.760afc8b.chunk.js.map": "/cantieri-fibercop/static/js/453.760afc8b.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.bb4ed5df.css",
+    "static/js/main.b197b23d.js"
+  ]
+}
