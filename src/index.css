@@ -16,6 +16,6 @@ code {
     monospace;
 }
 
-#map {
+#map, #form-container {
   height: 500px;
 }
