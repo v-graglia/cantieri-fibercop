@@ -33,8 +33,8 @@ function App() {
   const [markers, setMarkers] = useState([]);
   const [map, setMap] = useState(null);
   const [isButtonEnabled, setIsButtonEnabled] = useState(false);
-
   const featureGroupRef = useRef();
+  const [dataCreationTime, setDataCreationTime] = useState("-");
 
   useEffect(() => {
     document.title = "Cantieri Fibercop - Map";
@@ -48,6 +48,8 @@ function App() {
       .then((response) => {
         console.log("Data fetched successfully:", response.data);
         const data = response.data.data;
+        setDataCreationTime(response.data.creation_time);
+        console.log("Data creation time: ", dataCreationTime);
         setCityData(data);
         const provinces = [
           ...new Set(data.map((item) => item.PROVINCIA)),
@@ -109,6 +111,12 @@ function App() {
         .filter((item) => item.COMUNE === selectedCity)
         .sort((a, b) => a.INDIRIZZO.localeCompare(b.INDIRIZZO));
       setMarkers(filteredData);
+      const mapElement = document.getElementById('map');
+      if (mapElement) {
+        mapElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        mapElement.focus();
+      }
+
     }
   };
   
@@ -121,14 +129,18 @@ function App() {
   };
 
   return (
-    <div className="relative flex flex-col min-h-screen  justify-center overflow-hidden bg-gray-200 min-h-screen text-gray-700">
+    <div className="relative flex flex-col min-h-screen justify-between overflow-hidden bg-gray-800 text-gray-700">
       <div className="relative container mx-auto px-4 py-8">
-        <h1 className="text-3xl font-bold text-center mb-8 text-blue-600">
-          Cantieri FiberCop
-        </h1>
+        <header className="w-full text-white">
+          <div className="container mx-auto px-4 py-8">
+            <h1 className="text-center text-2xl sm:text-4xl font-medium mb-1 drop-shadow-lg">
+              Cantieri Fibercop
+            </h1>
+          </div>
+        </header>
         <div className="relative flex justify-center lg:flex-row flex-col lg:space-x-2" >
             <div class="bg-white px-6 pb-8 pt-10 shadow-xl ring-2 ring-white/5 rounded-lg " id="form-container">
-                <div class=" space-y-6 leading-1 flex-col items-center w-full bg-white rounded p-8 md:max-w-sm mx-auto">
+                <div class="tex space-y-6 leading-1 flex-col items-center w-full bg-white rounded p-8 md:max-w-sm mx-auto">
                     <div className="mb-4">
                     <label
                         htmlFor="provinceSelect"
@@ -244,6 +256,26 @@ function App() {
             </div>
         </div>
       </div>
+      <footer className="w-full text-center">
+        <div className="bg-gray-900 py-4 text-gray-100">
+            <div className="mx-4 flex justify-center flex-col">
+              <div>
+                <p>
+                  Dati aggiornati al {dataCreationTime}              
+                </p>
+              </div>
+              <div className="flex items-center justify-center gap-4">
+              <a class="text-sm font-light text-gray-300 hover:underline !text-indigo-50 !text-base italic font-semibold" target="_blank" rel="noopener noreferrer" href="https://github.com/v-graglia/cantieri-fibercop-data">
+                Visualizza i Dati
+                </a>
+                
+                <a class="text-sm font-light text-gray-300 hover:underline !text-indigo-50 !text-base italic font-semibold" target="_blank" rel="noopener noreferrer" href="https://github.com/v-graglia/cantieri-fibercop">
+                Codice Sorgente
+                </a>
+              </div>
+          </div>
+        </div>
+      </footer>
     </div>
     
   );
