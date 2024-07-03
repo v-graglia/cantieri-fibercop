@@ -169,7 +169,7 @@ function App() {
                         htmlFor="citySelect"
                         className="block text-lg font-bold mb-2"
                     >
-                        Città:
+                        Comune:
                     </label>
                     <div className="custom-select">
                         <select
